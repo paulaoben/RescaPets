@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+     <title>RescaPets</title>
+     <link rel="stylesheet" href="./log.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="blueBg">
+            <div class="box signin">
+                <h2>¿Ya tenés una cuenta?</h2>
+                <button class="signinBtn" style="background-color: #0a2f35; color: #F1E7E4;";>Iniciá sesión</button>
+            </div>
+            <div class="box signup">
+                <h2>¿No tenés una cuenta?</h2>
+                <button class="signupBtn">Registrate</button>
+            </div>
+        </div>
+        <!--========FORMULARIO DE INICIO=========-->
+        <div class="formBx">
+            <div class="form siginForm">
+                <form id="frmlogin" method="POST" action="login_registrar.php">
+                    <h3>Iniciá Sesión</h3>
+                    <input type="text" placeholder="Username" name="txtusuario" required/>
+                    <input type="password" placeholder="Password" name="txtpassword" required/>
+                    <input type="submit" value="Login" name="btnloginx">
+                </form>
+            </div>
+        <!--========FORMULARIO DE REGISTRO=========-->
+            <div class="form signupForm">
+                <form id="frmregistrar" method="POST" action="login_registrar.php">
+                    <h3>Registrate</h3>
+                    <input type="text" placeholder="Username" name="txtusuario" required/>
+                    <input type="password" placeholder="Password" name="txtpassword" required/>
+                    <input type="submit" value="Login" name="btnregistrarx" style="background-color: #0a2f35; color: #F1E7E4;">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--========SCRIPT=========-->
+    <script>
+        const signinBtn = document.querySelector('.signinBtn');
+        const signupBtn = document.querySelector('.signupBtn');
+        const formBx = document.querySelector('.formBx');
+        const body = document.querySelector('body');
+
+        signupBtn.onclick = function(){
+            formBx.classList.add('active')
+            body.classList.add('active')
+        }
+
+        signinBtn.onclick = function(){
+            formBx.classList.remove('active')
+            body.classList.remove('active')
+        }
+    </script>
+</body>
+</html>
